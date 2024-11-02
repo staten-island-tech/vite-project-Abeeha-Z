@@ -1,6 +1,7 @@
-import "../CSS/style.css";
-import { coffeeShopMenu } from "./products";
+import coffeeShopMenu from "./products.js";
 
-document.querySelector(coffeeShopMenu.coffees.latte).innerHTML = `
+console.log("JavaScript is running!"); // Add this line
+
+document.querySelector("#app").innerHTML = `
     <h3>Hello</h3>
 `;
