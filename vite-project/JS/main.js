@@ -1,7 +1,14 @@
-import coffeeShopMenu from "./products.js";
+import coffeeShopMenu from "../products.js";
+import "../CSS/style.css"
 
-console.log("JavaScript is running!"); // Add this line
+const menu = DOMSelectors.container
 
-document.querySelector("#app").innerHTML = `
-    <h3>Hello</h3>
-`;
+for (i in coffeeShopMenu) {
+    menu.insertAdjacentHTML("beforeend", `
+        <h1>${item.name}</h1>;
+        <img src="${item.image}">
+        <p>${item.description}</p>;
+        `
+    );
+}
+
