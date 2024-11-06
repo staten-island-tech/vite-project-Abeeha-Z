@@ -1,4 +1,4 @@
-const coffeeShopMenu = {
+const ShopMenu = {
   coffees: {
     espresso: {
       price: 2.5,
@@ -106,4 +106,4 @@ const coffeeShopMenu = {
   },
 };
 
-export default coffeeShopMenu;
+export {ShopMenu};

@@ -1,14 +1,17 @@
-import coffeeShopMenu from "../products.js";
+import {ShopMenu} from "../JS/products.js";
 import "../CSS/style.css"
 
-const menu = DOMSelectors.container
+const menu = document.querySelector('#container');
 
-for (i in coffeeShopMenu) {
-    menu.insertAdjacentHTML("beforeend", `
-        <h1>${item.name}</h1>;
-        <img src="${item.image}">
-        <p>${item.description}</p>;
-        `
-    );
+function createCards() {
+    ShopMenu.forEach((item) => {
+        menu.insertAdjacentHTML("beforeend", `
+            <div>
+            <h1>${item.name}</h1>
+            <img src="${item.image}">
+            <p>${item.description}</p>
+            </div>
+        `)
+    });
 }
-
+createCards();
