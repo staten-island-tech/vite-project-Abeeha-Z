@@ -1,109 +1,142 @@
-const ShopMenu = {
-  coffees: {
-    espresso: {
-      price: 2.5,
-      description: "Rich and bold espresso shot.",
-      category: "coffee",
-      image: "https://blogstudio.s3.theshoppad.net/coffeeheroau/ec178d83e5f597b162cda1e60cb64194.jpg"
-    },
-    americano: {
-      price: 3.0,
-      description: "Espresso with hot water for a smooth flavor.",
-      category: "coffee",
-      image: "https://www.foodandwine.com/thmb/9JyfZPcxlV9ubEeuSznhO-M4q0w=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Partners-Americano-FT-BLOG0523-b8e18cc340574cc9bed536cceeec7082.jpg"
+const shopItems = [
+  {
+    name: "Espresso",
+    price: 2.5,
+    description: "Rich and bold espresso shot.",
+    image:
+      "https://blogstudio.s3.theshoppad.net/coffeeheroau/ec178d83e5f597b162cda1e60cb64194.jpg", // Blank spot for image URL
+    category: "coffee",
+  },
+  {
+    name: "Americano",
+    price: 3.0,
+    description: "Espresso with hot water for a smooth flavor.",
+    image:
+      "https://popmenucloud.com/cdn-cgi/image/width=1920,height=1920,format=auto,fit=scale-down/wibjptxr/10d77b7d-188a-45bb-a601-bc26d178f337.jpeg", // Blank spot for image URL
+    category: "coffee",
+  },
+  {
+    name: "Latte",
+    price: 4.0,
+    description: "Espresso with steamed milk and a touch of foam.",
+    image:
+      "https://www.caffesociety.co.uk/assets/recipe-images/latte-small.jpg", // Blank spot for image URL
+    category: "coffee",
+  },
+  {
+    name: "Cappuccino",
+    price: 4.5,
+    description: "Espresso with equal parts steamed milk and foam.",
+    image:
+      "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipe%20Ramp%20Up%2F2022-07-Cappuccino%2FCappuccino", // Blank spot for image URL
+    category: "coffee",
+  },
+  {
+    name: "Mocha",
+    price: 4.75,
+    description: "Espresso with steamed milk and chocolate syrup.",
+    image:
+      "https://hoxtoncoffee.com/cdn/shop/articles/latte-art-on-mocha_1200x1200.jpg?v=1660069726", // Blank spot for image URL
+    category: "coffee",
+  },
+  {
+    name: "Cold Brew",
+    price: 3.5,
+    description: "Smooth and refreshing cold-brewed coffee.",
+    image:
+      "https://daniliciousdishes.com/wp-content/uploads/2020/05/Homemade-Cold-Brew-Coffee-1-2.jpg", // Blank spot for image URL
+    category: "coffee",
+  },
 
-    },
-    latte: {
-      price: 4.0,
-      description: "Espresso with steamed milk and a touch of foam.",
-      category: "coffee",
-      image: "https://angelinos.com/cdn/shop/articles/How_Much_Milk_Coffee_in_a_Cappuccino.jpg?v=1701189122&width=320"
-    },
-    cappuccino: {
-      price: 4.5,
-      description: "Espresso with equal parts steamed milk and foam.",
-      category: "coffee",
-      image: "https://vinbarista.com/uploads/news/cappuccino-la-gi-cach-lam-1-ly-cafe-cappuccino-chuan-vi-y-202212231043.png"
-    },
-    mocha: {
-      price: 4.75,
-      description: "Espresso with steamed milk and chocolate syrup.",
-      category: "coffee",
-      image: "https://images.immediate.co.uk/production/volatile/sites/2/2021/11/Mocha-1fc71f7.png?quality=90&resize=556,505"
-    },
-    coldBrew: {
-      price: 3.5,
-      description: "Smooth and refreshing cold-brewed coffee.",
-      category: "coffee",
-      image: "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2Farchive%2F9eada0d203bfb580d801b478edd553465c7afb52"
-    },
+  // Tea items
+  {
+    name: "Chai Latte",
+    price: 4.0,
+    description: "Spiced chai tea with steamed milk.",
+    image: "", // Blank spot for image URL
+    category: "teas",
   },
-  teas: {
-    chaiLatte: {
-      price: 4.0,
-      description: "Spiced chai tea with steamed milk.",
-      category: "tea",
-    },
-    greenTea: {
-      price: 2.5,
-      description: "Freshly brewed green tea with a delicate flavor.",
-      category: "tea",
-    },
-    herbalTea: {
-      price: 2.5,
-      description: "Caffeine-free herbal blend for relaxation.",
-      category: "tea",
-    },
-    icedTea: {
-      price: 3.0,
-      description: "Refreshing iced tea with lemon.",
-      category: "tea",
-    },
+  {
+    name: "Green Tea",
+    price: 2.5,
+    description: "Freshly brewed green tea with a delicate flavor.",
+    image: "", // Blank spot for image URL
+    category: "teas",
   },
-  savoryFood: {
-    sandwich: {
-      price: 5.0,
-      description: "Gourmet sandwich with your choice of fillings.",
-      category: "savory food",
-    },
-    salad: {
-      price: 6.0,
-      description: "Fresh mixed greens with seasonal vegetables.",
-      category: "savory food",
-    },
-    quiche: {
-      price: 4.5,
-      description: "Savory pie filled with eggs, cheese, and vegetables.",
-      category: "savory food",
-    },
-    avocadoToast: {
-      price: 4.0,
-      description: "Smashed avocado on toasted bread with seasonings.",
-      category: "savory food",
-    },
+  {
+    name: "Herbal Tea",
+    price: 2.5,
+    description: "Caffeine-free herbal blend for relaxation.",
+    image: "", // Blank spot for image URL
+    category: "teas",
   },
-  sweetFood: {
-    pastry: {
-      price: 2.5,
-      description: "Freshly baked pastry of the day.",
-      category: "sweet food",
-    },
-    muffin: {
-      price: 2.75,
-      description: "Freshly baked muffin, available in various flavors.",
-      category: "sweet food",
-    },
-    brownie: {
-      price: 3.0,
-      description: "Rich chocolate brownie, gooey and delicious.",
-      category: "sweet food",
-    },
-    cookie: {
-      price: 1.5,
-      description: "Freshly baked cookie, soft and chewy.",
-      category: "sweet food",
-    },
+  {
+    name: "Iced Tea",
+    price: 3.0,
+    description: "Refreshing iced tea with lemon.",
+    image: "", // Blank spot for image URL
+    category: "teas",
   },
-};
 
-export {ShopMenu};
+  // Sweet food items
+  {
+    name: "Pastry",
+    price: 2.5,
+    description: "Freshly baked pastry of the day.",
+    image: "", // Blank spot for image URL
+    category: "sweetfood",
+  },
+  {
+    name: "Muffin",
+    price: 2.75,
+    description: "Freshly baked muffin, available in various flavors.",
+    image: "", // Blank spot for image URL
+    category: "sweetfood",
+  },
+  {
+    name: "Brownie",
+    price: 3.0,
+    description: "Rich chocolate brownie, gooey and delicious.",
+    image: "", // Blank spot for image URL
+    category: "sweetfood",
+  },
+  {
+    name: "Cookie",
+    price: 1.5,
+    description: "Freshly baked cookie, soft and chewy.",
+    image: "", // Blank spot for image URL
+    category: "sweetfood",
+  },
+
+  // Savory food items
+  {
+    name: "Sandwich",
+    price: 5.0,
+    description: "Gourmet sandwich with your choice of fillings.",
+    image: "", // Blank spot for image URL
+    category: "savoryfood",
+  },
+  {
+    name: "Salad",
+    price: 6.0,
+    description: "Fresh mixed greens with seasonal vegetables.",
+    image: "", // Blank spot for image URL
+    category: "savoryfood",
+  },
+  {
+    name: "Quiche",
+    price: 4.5,
+    description: "Savory pie filled with eggs, cheese, and vegetables.",
+    image: "", // Blank spot for image URL
+    category: "savoryfood",
+  },
+  {
+    name: "Avocado Toast",
+    price: 4.0,
+    description: "Smashed avocado on toasted bread with seasonings.",
+    image: "", // Blank spot for image URL
+    category: "savoryfood",
+  },
+];
+
+export { shopItems };
