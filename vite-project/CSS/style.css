@@ -1,12 +1,10 @@
-html, 
-body, 
-*/ 
-
-:root {
+html,
+body,
+*/:root {
   font-family: "Vujahday Script", cursive;
   font-size: 10px;
   text-align: center;
-  display:flex;
+  display: flex;
 
   color: rgb(0, 0, 0);
   font-synthesis: none;
@@ -15,57 +13,56 @@ body,
   -moz-osx-font-smoothing: grayscale;
 }
 
-#app {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  text-align: center;
-}
 
 #background {
-  position: absolute; /*allows things to be placed on top on another */
-  height: 100%; 
-  width: 100%;
+
+  position: sticky;
+  /*allows things to be placed on top on another */
+  height: 100vh;
+  width: 100vw;
   background-image: url(https://i.ytimg.com/vi/DyJTVkRP1vY/maxresdefault.jpg);
   background-position: center;
-  background-size:cover;
-  filter:blur(8px);
-  z-index: -1;  /* Place it behind the content */
+  background-size: cover;
+  filter: blur(3px);
+  z-index: -1;
+  /* Place it behind the content */
 }
 
 h1 {
-  font-size:10rem;
-  color:rgb(255, 255, 255);
+  font-size: 5rem;
+  color: rgb(255, 255, 255);
 }
 
 #container {
-  width:100%;
-  filter:none;
-  flex-direction: column;
-  display:flex;
+  width: 100%;
+  filter: none;
+  flex-direction: row;
+  display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content:center;
+  justify-content: center;
 }
 
 .menu-item {
   color: rgb(61, 38, 4);
-  border: 0.5rem solid rgb(61, 38, 4);
-  width: 25%;
-  padding:1rem;
-  margin:2rem;
-  background-color: rgba(255, 255, 255, 0.247);
-  font-size:3rem;
+  border: 0.2rem solid rgb(61, 38, 4);
+  width: 20%;
+  padding: 1rem;
+  margin: 2rem;
+  background-color: rgba(255, 255, 255, 0.778);
+  font-size: 2rem;
+  border-radius: 2rem;
 }
 
 .item-properties {
-  font-size:3rem;
+  font-size: 1.5rem;
 }
 
-.images {
+.image {
   width: 100%;
-  height:30%;
+
 }
+
 /* 
 button {
   border-radius: 8px;
