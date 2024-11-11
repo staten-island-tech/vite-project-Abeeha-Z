@@ -1,24 +1,49 @@
 html,
 body,
-*/:root {
-  font-family: "Vujahday Script", cursive;
-  font-size: 10px;
-  text-align: center;
-  display: flex;
-
-  color: rgb(0, 0, 0);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*  
+{
+font-family: "Playfair Display", serif;
+text-align: center;
+z-index: 1;
+position: relative;
+text-align: center;
 }
 
-body {
-  text-align: center;
+:root {
+  /* Colors*/
+  --black: #000;
+  --dark-brown: #381c06;
+  --light-brown: #6c3d18;
+  --white: #f4e5c4;
+
+  /*Intentions */
+  --primary: var(--white);
+  --secondary: var(--light-brown); 
+  --tertiary:var(--dark-brown);
+  /*Default colors*/
+
+  /*Typography */
+  --h1: 6.594rem;
+  --h2: 2.5rem;
+  --h3: 1.5rem;
+  --h4: 1rem;
+
+
+}
+
+.light {
+  --primary: var(--white);
+  --secondary: var(--light-brown); 
+  --tertiary:var(--dark-brown);
+}
+.dark {
+  --primary:var(--black);
+  --secondary: var(--white); 
+  --tertiary:var(--black)
 }
 
 #background {
-  background-attachment: fixed;
+  position: fixed;
   height: 100vh;
   width: 100vw;
   background-image: url(https://i.ytimg.com/vi/DyJTVkRP1vY/maxresdefault.jpg);
@@ -28,15 +53,65 @@ body {
   z-index: -1;
   margin: 0;
   padding: 0;
-  /* Place it behind the content */
 }
 
 h1 {
-  background-color: black;
   height: 10vh;
-  font-size: 4rem;
-  color: rgb(255, 255, 255);
-  padding-top: 2rem;
+  margin:0;
+  font-size: var(--h1);
+  color: var(--secondary);
+  text-shadow: 0.35rem 0.1rem var(--tertiary);
+  padding: 2rem;
+
+}
+
+
+.themebtn,
+.themebtn:link,
+.themebtn:visited {
+  position:;
+  text-transform: uppercase;
+  width:9rem;
+  text-decoration: none;
+  padding: 1rem 3rem;
+  margin: 3rem 2rem;
+  font-size: var(--h4);
+  border: none;
+  font-weight: bold;
+  background-color: var(--primary);
+  color:var(--secondary);
+  border: solid var(--secondary) 0.2rem;
+  border-radius: 10rem;
+  transition: all 0.2s;
+
+}
+.themebtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  width:9rem;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  display: inline-block;
+  margin: 3rem 1rem;
+  font-size: var(--h4);
+  border: none;
+  font-weight: bold;
+  background-color: var(--primary);
+  color:var(--secondary);
+  border: solid var(--secondary) 0.2rem;
+  border-radius: 10rem;
+  transition: all 0.2s;
+
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 0.5rem rgba(0, 0, 0, 0.2);
 }
 
 #container {
@@ -47,65 +122,37 @@ h1 {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
+  position: relative;
 }
 
 .menu-item {
-  color: rgb(61, 38, 4);
-  border: 0.2rem solid rgb(61, 38, 4);
+  padding:1rem;
+  color: var(--secondary);
+  border: 0.2rem solid var(--secondary);
   width: 20%;
-  margin: 2rem;
-  background-color: rgba(255, 255, 255, 0.843);
-  font-size: 2rem;
+  margin: 1rem;
+  background-color: var(--primary);
+  font-size: var(--h3);
   border-radius: 2rem;
+  position: relative;
+  text-shadow: 0.1rem 0.1rem 0.3rem var(--tertiary);
+
 }
 
 .item-properties {
-  font-size: 1.5rem;
+  font-size: var(--h4);
   margin-bottom: 2rem;
+  text-shadow:none;
+
 }
 
 .images {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 12;
   object-fit: cover;
   margin: 0;
-  border-top-left-radius: 1.9rem;
-  border-top-right-radius: 1.9rem;
+  border: 0.15rem solid var(--secondary);
+  border-radius: 1.8rem;
 
 }
 
-/* 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-
-button:hover {
-  border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-/*  */
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
-} */
