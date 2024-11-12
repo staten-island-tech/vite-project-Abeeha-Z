@@ -13,7 +13,7 @@ text-align: center;
   /* Colors*/
   --black: #000;
   --dark-brown: #381c06;
-  --light-brown: #6c3d18;
+  --light-brown: #7f4a22;
   --white: #f4e5c4;
 
   /*Intentions */
@@ -83,8 +83,8 @@ h1 {
   border: solid var(--secondary) 0.2rem;
   border-radius: 10rem;
   transition: all 0.2s;
-
 }
+
 .themebtn:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 0.5rem rgba(0, 0, 0, 0.2);
@@ -107,8 +107,8 @@ h1 {
   border: solid var(--secondary) 0.2rem;
   border-radius: 10rem;
   transition: all 0.2s;
-
 }
+
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 0.5rem rgba(0, 0, 0, 0.2);
@@ -136,7 +136,6 @@ h1 {
   border-radius: 2rem;
   position: relative;
   text-shadow: 0.1rem 0.1rem 0.3rem var(--tertiary);
-
 }
 
 .item-properties {
@@ -153,6 +152,4 @@ h1 {
   margin: 0;
   border: 0.15rem solid var(--secondary);
   border-radius: 1.8rem;
-
 }
-
