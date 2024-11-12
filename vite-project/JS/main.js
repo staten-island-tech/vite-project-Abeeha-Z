@@ -14,7 +14,7 @@ function createCards() {
     menu.insertAdjacentHTML(
       "beforeend",
       `
-      <div class="menu-item" data-category="${item.category}">
+      <div class="menu-item" id="${item.category}">
       <img src="${item.image}" class="images">
       <h2>${item.name}</h2>
       <div class="item-properties">
@@ -40,7 +40,7 @@ function switchtheme() {
   });
 }
 
-function hidecards(allItems) {
+function hidecards() {
   const allItems = document.querySelectorAll(".menu-item");
   allItems.forEach((item) => {
     item.style.display = "none";
@@ -50,13 +50,12 @@ function hidecards(allItems) {
 
 function filterSweetItems() {
   sweetbutton.addEventListener("click", function () {
-    const allItems = document.querySelectorAll(".menu-item");
-
+    hidecards(); 
     allItems.forEach((item) => {
-      item.style.display = "none";
-      if (item.getAttribute("data-category").includes("sweet")) {
+      sweetitems = document.querySelectorAll("#sweetfood");
+      sweetitems.forEach(() => {
         item.style.display = "block";
-      }
+      });
     });
   });
 }
@@ -64,29 +63,31 @@ function filterSweetItems() {
 function filterSavoryItems() {
   savorybutton.addEventListener("click", function () {
     hidecards();
-    if (item.getAttribute("data-category").includes("savory")) {
-      item.style.display = "block";
-    }
+    allItems.forEach((item) => {
+      if (item.getAttribute("data-category").includes("savory")) {
+        item.style.display = "block";
+      }
+    });
   });
 }
 
-// function filterCoffees() {
-//   coffeebutton.addEventListener("click", function () {
-//     const allItems = document.querySelectorAll(".menu-item");
-//     allItems.forEach((item) => {
-//       item.style.display = "none";
-//     });
-//   });
-// }
-// function reset() {
-//   allbtn.addEventListener("click", function () {
-//     const allItems = document.querySelectorAll(".menu-item");
+function filterCoffees() {
+  coffeebutton.addEventListener("click", function () {
+    const allItems = document.querySelectorAll(".menu-item");
+    allItems.forEach((item) => {
+      item.style.display = "none";
+    });
+  });
+}
+function reset() {
+  allbtn.addEventListener("click", function () {
+    const allItems = document.querySelectorAll(".menu-item");
 
-//     allItems.forEach((item) => {
-//       item.style.display = "block"; // Makes all items visible again
-//     });
-//   });
-// }
+    allItems.forEach((item) => {
+      item.style.display = "block"; // Makes all items visible again
+    });
+  });
+}
 
 //inside the filter items function, for each card
 createCards(shopItems);
