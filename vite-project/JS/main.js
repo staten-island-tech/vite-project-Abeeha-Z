@@ -29,6 +29,7 @@ function createCards() {
 
 //theme toggle button
 function switchtheme() {
+  //works
   document.querySelector(".themebtn").addEventListener("click", function () {
     if (document.body.classList.contains("light")) {
       document.body.classList.remove("light");
@@ -41,28 +42,25 @@ function switchtheme() {
 }
 
 function hidecards() {
+  //works
   const allItems = document.querySelectorAll(".menu-item");
   allItems.forEach((item) => {
     item.style.display = "none";
   });
 }
-//uses includes()
 
 function filterSweetItems() {
   sweetbutton.addEventListener("click", function () {
-    hidecards(); 
-    allItems.forEach((item) => {
-      sweetitems = document.querySelectorAll("#sweetfood");
-      sweetitems.forEach(() => {
-        item.style.display = "block";
-      });
-    });
+    hidecards();
+    const allItems = document.querySelectorAll(".menu-item");
+    allItems.forEach(() => {});
   });
 }
 
 function filterSavoryItems() {
   savorybutton.addEventListener("click", function () {
     hidecards();
+    const allItems = document.querySelectorAll(".menu-item");
     allItems.forEach((item) => {
       if (item.getAttribute("data-category").includes("savory")) {
         item.style.display = "block";
@@ -71,18 +69,10 @@ function filterSavoryItems() {
   });
 }
 
-function filterCoffees() {
-  coffeebutton.addEventListener("click", function () {
-    const allItems = document.querySelectorAll(".menu-item");
-    allItems.forEach((item) => {
-      item.style.display = "none";
-    });
-  });
-}
 function reset() {
   allbtn.addEventListener("click", function () {
+    hidecards();
     const allItems = document.querySelectorAll(".menu-item");
-
     allItems.forEach((item) => {
       item.style.display = "block"; // Makes all items visible again
     });
@@ -94,6 +84,4 @@ createCards(shopItems);
 switchtheme();
 filterSweetItems();
 filterSavoryItems();
-filterCoffees();
-filterTeas();
 reset();
