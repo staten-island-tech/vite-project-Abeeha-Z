@@ -4,17 +4,20 @@ import "../CSS/style.css";
 const menu = document.querySelector("#container");
 const sweetbutton = document.querySelector("#sweetbtn");
 const savorybutton = document.querySelector("#savorybtn");
-const coffeebutton = document.querySelector("#cofeebtn");
+const coffeebutton = document.querySelector("#coffeebtn");
 const teabutton = document.querySelector("#teabtn");
 const allbtn = document.querySelector("#all");
 
-function createCards() {
+function intialize() {
   menu.innerHTML = "";
-  shopItems.forEach((item) => {
-    menu.insertAdjacentHTML(
-      "beforeend",
-      `
-      <div class="menu-item" id="${item.category}">
+  shopItems.forEach((item) => createCards(item));
+}
+
+function createCards(item) {
+  menu.insertAdjacentHTML(
+    "beforeend",
+    `
+      <div class="menu-item">
       <img src="${item.image}" class="images">
       <h2>${item.name}</h2>
       <div class="item-properties">
@@ -23,8 +26,7 @@ function createCards() {
       </div>
   </div>
 `
-    );
-  });
+  );
 }
 
 //theme toggle button
@@ -41,47 +43,71 @@ function switchtheme() {
   });
 }
 
-function hidecards() {
-  //works
-  const allItems = document.querySelectorAll(".menu-item");
-  allItems.forEach((item) => {
-    item.style.display = "none";
-  });
-}
-
 function filterSweetItems() {
   sweetbutton.addEventListener("click", function () {
-    hidecards();
-    const allItems = document.querySelectorAll(".menu-item");
-    allItems.forEach(() => {});
+    menu.innerHTML = "";
+    const sweetItems = shopItems.filter((item) =>
+      item.category.includes("sweet")
+    );
+    sweetItems.forEach((item) => {
+      console.log(item.name);
+      createCards(item);
+    });
   });
 }
 
 function filterSavoryItems() {
   savorybutton.addEventListener("click", function () {
-    hidecards();
-    const allItems = document.querySelectorAll(".menu-item");
-    allItems.forEach((item) => {
-      if (item.getAttribute("data-category").includes("savory")) {
-        item.style.display = "block";
-      }
+    menu.innerHTML = "";
+    const savoryItems = shopItems.filter((item) =>
+      item.category.includes("savory")
+    );
+    savoryItems.forEach((item) => {
+      console.log(item.name);
+      createCards(item);
+    });
+  });
+}
+
+function filterCoffees() {
+  coffeebutton.addEventListener("click", function () {
+    menu.innerHTML = "";
+    const coffeeItems = shopItems.filter((item) =>
+      item.category.includes("coffee")
+    );
+    coffeeItems.forEach((item) => {
+      console.log(item.name);
+      createCards(item);
+    });
+  });
+}
+
+function filterTeas() {
+  teabutton.addEventListener("click", function () {
+    menu.innerHTML = "";
+    const teaItems = shopItems.filter((item) => item.category.includes("teas"));
+    teaItems.forEach((item) => {
+      console.log(item.name);
+      createCards(item);
     });
   });
 }
 
 function reset() {
   allbtn.addEventListener("click", function () {
-    hidecards();
-    const allItems = document.querySelectorAll(".menu-item");
-    allItems.forEach((item) => {
-      item.style.display = "block"; // Makes all items visible again
+    menu.innerHTML = "";
+    shopItems.forEach((item) => {
+      createCards(item);
     });
   });
 }
 
 //inside the filter items function, for each card
-createCards(shopItems);
+
+intialize();
 switchtheme();
 filterSweetItems();
 filterSavoryItems();
+filterCoffees();
+filterTeas();
 reset();

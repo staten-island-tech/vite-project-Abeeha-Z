@@ -73,14 +73,6 @@ const shopItems = [
     category: "sweetfood",
   },
   {
-    name: "Iced Tea",
-    price: 3.0,
-    description: "Refreshing iced tea with lemon.",
-    image:
-      "https://images.themodernproper.com/billowy-turkey/production/posts/IcedTea_8.jpg?w=1200&q=82&auto=format&fit=crop&dm=1716306653&s=106dea35c7406e03f4ec643638104115",
-    category: "teas",
-  },
-  {
     name: "Mocha",
     price: 4.75,
     description: "Espresso with steamed milk and chocolate syrup.",
