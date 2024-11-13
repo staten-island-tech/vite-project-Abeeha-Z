@@ -153,3 +153,18 @@ h1 {
   border: 0.15rem solid var(--secondary);
   border-radius: 1.8rem;
 }
+
+.gif-container {
+  position:absolute;
+  display: flex;
+  justify-content: space-between;
+  padding:2rem;
+  width: 100vw;  /* Adjust to the width of your GIF */
+  height: 10vw; /* Adjust to the height of your GIF */
+}
+
+/* Make sure the gif is displayed as is */
+.gif {
+  height: auto;
+  padding-bottom: 2rem;
+}
