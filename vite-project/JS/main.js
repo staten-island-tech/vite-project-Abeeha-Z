@@ -102,8 +102,6 @@ function reset() {
   });
 }
 
-//inside the filter items function, for each card
-
 intialize();
 switchtheme();
 filterSweetItems();
