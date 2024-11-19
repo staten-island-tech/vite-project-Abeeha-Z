@@ -33,7 +33,7 @@ body,
 .light {
   --primary: var(--white);
   --secondary: var(--light-brown);
-  --tertiary: var(--dark-brown);
+  --tertiary: var(--white);
 }
 
 .dark {
@@ -56,7 +56,6 @@ body,
 }
 
 h1 {
-
   height: 10vh;
   margin: 0;
   font-size: var(--h1);
